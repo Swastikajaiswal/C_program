@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+// Defining the structure for a student
+struct Student {
+    char name[50];
+    int rollNo;
+    float marks;
+};
+
+int main() {
+    // Declaring a variable of type struct Student
+    struct Student student;
+
+    // Taking input for the student's details
+    printf("Enter the student's name: ");
+    fgets(student.name, sizeof(student.name), stdin); // To get string with spaces
+
+    printf("Enter the student's roll number: ");
+    scanf("%d", &student.rollNo);
+
+    printf("Enter the student's marks: ");
+    scanf("%f", &student.marks);
+
+    // Displaying the student's details
+    printf("\nStudent Details:\n");
+    printf("Name: %s", student.name); // No need for newline because fgets includes it
+    printf("Roll Number: %d\n", student.rollNo);
+    printf("Marks: %.2f\n", student.marks);
+
+    return 0;
+}
